@@ -1,0 +1,24 @@
+# ── Node / npm ──────────────────────────────────
+node_modules/
+npm-debug.log*
+yarn-error.log*
+
+# ── Build output ─────────────────────────────────
+build/
+dist/
+
+# ── Environment variables (NEVER commit!) ────────
+.env
+.env.local
+.env.production
+
+# ── Hardhat artifacts ────────────────────────────
+blockchain/artifacts/
+blockchain/cache/
+blockchain/deployment.json
+
+# ── Editor / OS ──────────────────────────────────
+.DS_Store
+Thumbs.db
+.vscode/
+*.log

@@ -1,0 +1,16 @@
+{
+  "name": "blockchain-voting-system-root",
+  "version": "1.0.0",
+  "description": "Root package for running all parts of the Blockchain Voting System",
+  "scripts": {
+    "install:all": "cd blockchain && npm install && cd ../backend && npm install && cd ../frontend && npm install",
+    "chain": "cd blockchain && npx hardhat node",
+    "deploy": "cd blockchain && npx hardhat run scripts/deploy.js --network localhost",
+    "compile": "cd blockchain && npx hardhat compile",
+    "test:contracts": "cd blockchain && npx hardhat test",
+    "backend": "cd backend && npm run dev",
+    "frontend": "cd frontend && npm start",
+    "seed": "cd backend && node scripts/seedAdmin.js"
+  },
+  "private": true
+}

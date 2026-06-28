@@ -1,0 +1,152 @@
+/* src/components/Navbar.css */
+
+.navbar {
+  display:          flex;
+  align-items:      center;
+  justify-content:  space-between;
+  padding:          0 28px;
+  height:           64px;
+  background:       rgba(26, 26, 46, 0.95);
+  border-bottom:    1px solid var(--border);
+  backdrop-filter:  blur(12px);
+  position:         sticky;
+  top:              0;
+  z-index:          100;
+}
+
+.navbar-brand {
+  display:     flex;
+  align-items: center;
+  gap:         10px;
+}
+
+.navbar-logo {
+  font-size: 1.5rem;
+}
+
+.navbar-title {
+  font-size:   1.2rem;
+  font-weight: 800;
+  background:  linear-gradient(135deg, var(--primary-light), var(--secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.navbar-subtitle {
+  font-size:  0.75rem;
+  color:      var(--text-muted);
+  padding:    2px 8px;
+  background: rgba(108, 99, 255, 0.1);
+  border:     1px solid rgba(108, 99, 255, 0.2);
+  border-radius: 20px;
+}
+
+/* Right side */
+.navbar-right {
+  display:     flex;
+  align-items: center;
+  gap:         16px;
+}
+
+/* MetaMask wallet button */
+.wallet-btn {
+  display:       flex;
+  align-items:   center;
+  gap:           8px;
+  padding:       8px 16px;
+  background:    rgba(108, 99, 255, 0.15);
+  border:        1px solid rgba(108, 99, 255, 0.4);
+  border-radius: 8px;
+  color:         var(--primary-light);
+  font-family:   inherit;
+  font-size:     0.85rem;
+  font-weight:   600;
+  cursor:        pointer;
+  transition:    all 0.2s ease;
+}
+
+.wallet-btn:hover:not(:disabled) {
+  background:   rgba(108, 99, 255, 0.25);
+  border-color: var(--primary);
+  transform:    translateY(-1px);
+}
+
+.wallet-btn:disabled {
+  opacity: 0.5;
+  cursor:  not-allowed;
+}
+
+.wallet-btn.connected {
+  background:   rgba(0, 217, 163, 0.1);
+  border-color: rgba(0, 217, 163, 0.4);
+  color:        var(--secondary);
+  font-family:  monospace;
+  font-size:    0.82rem;
+}
+
+.wallet-btn.connected:hover {
+  background:   rgba(255, 77, 109, 0.1);
+  border-color: rgba(255, 77, 109, 0.4);
+  color:        var(--danger);
+}
+
+.wallet-dot {
+  width:         8px;
+  height:        8px;
+  background:    var(--secondary);
+  border-radius: 50%;
+  animation:     pulse 2s infinite;
+  flex-shrink:   0;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1;   transform: scale(1); }
+  50%       { opacity: 0.6; transform: scale(0.85); }
+}
+
+/* User info section */
+.navbar-user {
+  display:     flex;
+  align-items: center;
+  gap:         12px;
+  padding-left: 16px;
+  border-left:  1px solid var(--border);
+}
+
+.user-info {
+  display:        flex;
+  flex-direction: column;
+  align-items:    flex-end;
+}
+
+.user-name {
+  font-size:   0.88rem;
+  font-weight: 600;
+  color:       var(--text-primary);
+}
+
+.user-role {
+  font-size:  0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding:    1px 7px;
+  border-radius: 4px;
+}
+
+.user-role.admin {
+  background: rgba(255, 169, 77, 0.15);
+  color:      var(--warning);
+}
+
+.user-role.voter {
+  background: rgba(108, 99, 255, 0.15);
+  color:      var(--primary-light);
+}
+
+@media (max-width: 680px) {
+  .navbar-subtitle { display: none; }
+  .navbar-user .user-info { display: none; }
+  .navbar { padding: 0 16px; }
+}
